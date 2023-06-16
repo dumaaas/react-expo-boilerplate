@@ -1,0 +1,9 @@
+{
+  "title": "Hey! Check the amount of the bears: ",
+  "add": "Add Bear",
+  "remove": "Remove Bear",
+  "autoAdd": "Auto Add",
+  "fetch": "Fetch",
+  "reset": "Reset",
+  "resetAutoAdd": "Reset Auto Add"
+}

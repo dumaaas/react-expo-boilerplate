@@ -6,16 +6,41 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint"
   },
   "dependencies": {
+    "@expo/webpack-config": "^18.0.1",
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/native-stack": "^6.9.12",
+    "@types/react": "~18.0.27",
     "expo": "~48.0.18",
+    "expo-localization": "^14.1.1",
     "expo-status-bar": "~1.4.4",
+    "i18n-js": "^4.2.3",
+    "i18next": "^23.1.0",
     "react": "18.2.0",
-    "react-native": "0.71.8"
+    "react-dom": "18.2.0",
+    "react-i18next": "^13.0.0",
+    "react-native": "0.71.8",
+    "react-native-safe-area-context": "4.5.0",
+    "react-native-screens": "~3.20.0",
+    "react-native-web": "~0.18.10",
+    "typescript": "^4.9.4",
+    "zustand": "^4.3.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@types/node": "^14.11.2",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "gts": "^3.1.1",
+    "typescript": "^4.9.4"
   },
   "private": true
 }
