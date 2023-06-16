@@ -18,6 +18,17 @@ import {useTranslation} from 'react-i18next';
 
 const Stack = createNativeStackNavigator();
 
+function LanguagePicker() {
+  const {t, i18n} = useTranslation();
+
+  return (
+    <View style={{flexDirection: 'row', gap: 20, marginRight: 20}}>
+      <Button onPress={() => i18n.changeLanguage('en')} title={t('en')} />
+      <Button onPress={() => i18n.changeLanguage('me')} title={t('me')} />
+    </View>
+  );
+}
+
 function HomeScreen({navigation}) {
   // const [isBootstrapping, setIsBootstrapping] = useState(true);
   const {t} = useTranslation();
@@ -103,12 +114,18 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen
             name="Home"
-            options={{title: t('home')}}
+            options={() => ({
+              title: t('home'),
+              headerRight: () => <LanguagePicker />,
+            })}
             component={HomeScreen}
           />
           <Stack.Screen
             name="Bear"
-            options={{title: t('bear')}}
+            options={() => ({
+              title: t('bear'),
+              headerRight: () => <LanguagePicker />,
+            })}
             component={BearScreen}
           />
         </Stack.Navigator>
